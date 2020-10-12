@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+table, th, td {
+    border: 1px solid black;
+    text-align: right;
+    padding: 10px;
+}
+
+.error-message {
+    color: red;
+}
+
+button {
+    margin: 20px 0px;
+}
+
+.total-cart-price {
+    font-weight: bold;
+}

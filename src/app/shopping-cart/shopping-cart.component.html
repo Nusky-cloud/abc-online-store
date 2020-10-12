@@ -1,0 +1,26 @@
+<div *ngIf="isLoadingCartDetails">
+  Loading cart details. Please wait!
+</div>
+<div *ngIf="!isLoadingCartDetails">
+    <div *ngIf="!shoppingCartResponse">No cart details found!</div>
+    <div *ngIf="shoppingCartResponse">
+      <table>
+        <tr>
+          <th>Product Image</th>
+          <th>Product Name</th>
+          <th>Product Price</th>
+        </tr>
+        <tr *ngFor="let product of shoppingCartResponse.pricesByProduct">
+          <td><img src="{{ '../../assets/images/product' + product.productId + '.jpg' }}" width="100" height="100"></td>
+          <td>{{ product.productName }}</td>
+          <td>{{ product.productPrice | number: '1.2-2' }}</td>
+        </tr>
+        <tr class="total-cart-price">
+          <td></td>
+          <td>Total Price is</td>
+          <td>{{ shoppingCartResponse.totalPrice | number: '1.2-2' }}</td>
+        </tr>
+      </table>
+    </div>
+    <a href=""><button>Proceed to product page</button></a>
+</div>
